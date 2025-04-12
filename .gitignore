@@ -1,0 +1,8 @@
+# assets
+robot-game-videos/
+
+# venv
+.venv
+
+# misc
+.DS_Store
