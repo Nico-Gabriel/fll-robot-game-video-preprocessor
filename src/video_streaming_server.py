@@ -4,26 +4,26 @@ from mjpeg_streamer import MjpegServer, Stream
 
 class VideoStreamingServer:
 	def __init__(self, host: str = "localhost", port: int = 8080) -> None:
-		self.server: MjpegServer = MjpegServer(host, port)
-		self.streams: dict[str, Stream] = {}
+		self._server: MjpegServer = MjpegServer(host, port)
+		self._streams: dict[str, Stream] = {}
 
 	def add_stream(self, stream_id: str) -> None:
-		if stream_id in self.streams:
+		if stream_id in self._streams:
 			raise ValueError(f'Stream with ID "{stream_id}" already exists.')
 
 		stream: Stream = Stream(stream_id)
 
-		self.server.add_stream(stream)
-		self.streams[stream_id] = stream
+		self._server.add_stream(stream)
+		self._streams[stream_id] = stream
 
 	def update_stream(self, stream_id: str, frame: MatLike) -> None:
-		if stream_id not in self.streams:
+		if stream_id not in self._streams:
 			raise ValueError(f'Stream with ID "{stream_id}" does not exist.')
 
-		self.streams[stream_id].set_frame(frame)
+		self._streams[stream_id].set_frame(frame)
 
 	def start(self) -> None:
-		self.server.start()
+		self._server.start()
 
 	def stop(self) -> None:
-		self.server.stop()
+		self._server.stop()
