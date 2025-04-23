@@ -4,7 +4,7 @@ robot-game-videos/
 # venv
 .venv
 
-# compiled
+# byte-compiled
 __pycache__/
 
 # misc
