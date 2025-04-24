@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 # Copyright (c) 2025 Nico-Gabriel Ruckendorfer
 #
 # This software is released under the MIT License.
