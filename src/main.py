@@ -7,7 +7,16 @@
 # For more information, see the LICENSE file in the root directory of this project.
 
 
-def main() -> None: ...
+"""Main entry point for the video processing application."""
+
+from video_processor import VideoProcessor
+
+
+def main() -> None:
+	"""Instantiates and runs the `VideoProcessor` class."""
+
+	video_processor: VideoProcessor = VideoProcessor()
+	video_processor.run()
 
 
 if __name__ == "__main__":

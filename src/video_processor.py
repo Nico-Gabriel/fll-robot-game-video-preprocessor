@@ -4,4 +4,8 @@
 # For more information, see the LICENSE file in the root directory of this project.
 
 
-class VideoProcessor: ...
+"""This module defines a class for running the video processing application."""
+
+
+class VideoProcessor:
+	def run(self) -> None: ...
