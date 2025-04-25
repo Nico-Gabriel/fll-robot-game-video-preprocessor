@@ -12,7 +12,7 @@ from mjpeg_streamer import MjpegServer, Stream
 
 class VideoStreamingServer:
 	"""
-	A class managing video streaming using the mjpeg-streamer library.
+	A class managing video streaming using the `mjpeg-streamer` library.
 	It allows adding multiple independent streams, updating their frames, and starting/stopping the server.
 
 	Attributes:
@@ -22,7 +22,7 @@ class VideoStreamingServer:
 
 	def __init__(self, host: str = "localhost", port: int = 8080) -> None:
 		"""
-		Initializes the VideoStreamingServer.
+		Initializes the `VideoStreamingServer` class.
 
 		Args:
 			host (str, optional): The hostname or IP address to bind the server to. Defaults to "localhost".
