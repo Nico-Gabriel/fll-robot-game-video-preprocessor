@@ -25,6 +25,13 @@ def _calculate_content_line_length(
 	return max(min_title_line_length, min_note_line_length, min_list_title_line_length, min_list_items_line_length)
 
 
+def _split_spaces(number_of_spaces: int) -> tuple[int, int]:
+	left_spaces: int = number_of_spaces // 2
+	right_spaces: int = number_of_spaces // 2 + number_of_spaces % 2
+
+	return left_spaces, right_spaces
+
+
 def _generate_title_line(title: str) -> str:
 	return ""
 
