@@ -32,8 +32,28 @@ def _split_spaces(number_of_spaces: int) -> tuple[int, int]:
 	return left_spaces, right_spaces
 
 
-def _generate_title_line(title: str) -> str:
-	return ""
+def _generate_title_line(
+	title: str,
+	border_icon: str,
+	title_icon: str,
+	title_icon_length: int,
+	separator_length: int,
+	content_line_length: int,
+) -> str:
+	spaces: int = content_line_length - len(title) - (separator_length + title_icon_length) * 2
+	left_spaces, right_spaces = _split_spaces(spaces)
+
+	return (
+		border_icon
+		+ " " * left_spaces
+		+ title_icon
+		+ " " * separator_length
+		+ title
+		+ " " * separator_length
+		+ title_icon
+		+ " " * right_spaces
+		+ border_icon
+	)
 
 
 def _generate_note_line(note: str) -> str:
